@@ -35,12 +35,12 @@ class Crossword:
 
                 print("Trying for coordinates", point_y, point_x, " at direction ",direction)
 
-                if (direction is 'horizontal' and point_x + len(word) > self.max_length()) \
-                        or (direction is 'vertical' and point_y + len(word) > self.max_length()):
+                if (direction == 'horizontal' and point_x + len(word) > self.max_length()) \
+                        or (direction == 'vertical' and point_y + len(word) > self.max_length()):
                     continue
 
                 for index in range(0, len(word)):
-                    if direction is 'horizontal':
+                    if direction == 'horizontal':
                         temp_point_x = point_x + index
                         temp_point_y = point_y
                     else:
@@ -55,7 +55,7 @@ class Crossword:
 
             for index in range(0, len(word)):
                 letter = word[index]
-                if direction is 'horizontal':
+                if direction == 'horizontal':
                     temp_point_x = point_x + index
                     temp_point_y = point_y
                 else:
@@ -76,7 +76,7 @@ class Boardtile:
         self.updatable = True
 
     def __str__(self):
-        return self.letter
+        return "| " + self.letter + " |"
 
     def getLetter(self):
         return self.letter
